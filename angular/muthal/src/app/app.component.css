@@ -1,0 +1,32 @@
+/* div.container {
+    width: 100%;
+    border: 1px solid gray;
+} */
+
+header, footer {
+    padding: 1em;
+    color: #c62135;
+    background-color: white;
+    clear: left;
+    text-align: center;
+    display: block;
+}
+
+h1{
+    color: #c62135;
+}
+
+nav {
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}

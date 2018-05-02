@@ -1,0 +1,100 @@
+<body>
+
+    <h2>Register Candidate</h2>
+    
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Register</button>
+    
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" action="/action_page.php">
+        <div class="container">
+          <h1>Register</h1>
+          <p>Please fill in this form to create profile.</p>
+          <hr>
+          <label for="dob"><b>Date of Birth</b></label>
+          <input type="text" placeholder="Enter D.O.B" name="dob" required>
+    
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter Name" name="name" required>
+    
+          <label for="height"><b>Height</b></label>
+          <input type="text" placeholder="Enter Height" name="height" required>
+          
+          <label for="complexion"><b>Complexion</b></label>
+          <input type="text" placeholder="Enter Complexion" name="complexion" required>
+
+          <label for="star"><b>Complexion</b></label>
+          <input type="text" placeholder="Enter Star" name="star" required>
+
+          <label for="pdm"><b>PDM</b></label>
+          <input type="text" placeholder="Enter PDM" name="pdm" required>
+
+          <label for="clrd"><b>Clear/Dhosham</b></label>
+          <input type="text" placeholder="Enter Clear/Dhosham" name="clrd" required>
+
+          <label for="birthplace"><b>Birth Place</b></label>
+          <input type="text" placeholder="Enter Place of Birth" name="birthplace" required>
+
+          <label for="birthtime"><b>Birth Place</b></label>
+          <input type="text" placeholder="Enter Time of Birth" name="birthtime" required>
+
+          <label for="occupation"><b>Occupation</b></label>
+          <input type="text" placeholder="Enter Occupation" name="occupation" required>
+
+          <label for="designation"><b>Designation</b></label>
+          <input type="text" placeholder="Enter Designation" name="designation" required>
+
+          <label for="salary"><b>Salary</b></label>
+          <input type="text" placeholder="Enter Salary per Month" name="salary" required>
+
+          <label for="brothers"><b>Brothers</b></label>
+          <input type="text" placeholder="Enter Brothers" name="brothers" required>
+
+          <label for="sisters"><b>Sisters</b></label>
+          <input type="text" placeholder="Enter Sisters" name="sisters" required>
+          
+          <label for="father"><b>Father</b></label>
+          <input type="text" placeholder="Enter Father's Name" name="fathername" required>
+          
+          <label for="mother"><b>Mother</b></label>
+          <input type="text" placeholder="Enter Mother's Name" name="mothername" required>
+
+          <label for="guardain"><b>Guardain</b></label>
+          <input type="text" placeholder="Enter Mother's Name" name="mothername" required>
+
+          <label for="guardain"><b>Guardain</b></label>
+          <input type="text" placeholder="Enter Guardian's Name" name="guardainname" required>
+
+          <label for="brideorgroom"><b>What sort of Bride/Groom Required</b></label>
+          <input type="text" placeholder="Enter Description" name="brideorgroom" required>
+
+          <label for="community"><b>Community Name</b></label>
+          <input type="text" placeholder="Enter community" name="community" required>
+
+          <label>
+            <input type="checkbox"  name="check" style="margin-bottom:15px"> Verified
+          </label>
+    
+          <p>All Details are verified <a href="#" style="color:dodgerblue"></a>.</p>
+    
+          <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    
+    </body>
