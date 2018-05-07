@@ -1,14 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { RouterModule, Routes } from '@angular/router';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
-// import { MatGridListModule } from '@angular/material/grid-list';
-// import {MatTabsModule} from '@angular/material/tabs';
+import { ProfileComponent } from './profile/profile.component';
+import { MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatCard, MatCardModule, MatInputModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { UsersService } from './services/users.service';
+import { UserInfoService } from './services/userInfo.service';
+import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
+import { ViewInfoComponent } from './home/view-info/view-info.component';
+import { ContactInfoComponent } from './home/view-info/contact-info/contact-info.component';
+import { RelativeInfoComponent } from './home/view-info/relative-info/relative-info.component';
+import { MainComponent } from './login/main/main.component';
+import { AppHeaderComponent } from './common/app-header/app-header.component';
+
 
 
 @NgModule({
@@ -17,13 +30,28 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     RegistrationComponent,
     LoginComponent,
-    // MatGridListModule
+    FilterPipe,
+    ProfileComponent,
+    ContactInfoComponent,
+    ConvertToSpacesPipe,
+    ViewInfoComponent,
+    RelativeInfoComponent,
+    MainComponent,
+    AppHeaderComponent
+
   ],
   imports: [
-    BrowserModule,routing,
-    // MatGridListModule,
+    BrowserModule,
+    routing,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatCheckboxModule, MatCardModule, MatInputModule,MatMenuModule,MatToolbarModule,
+    FormsModule, MatFormFieldModule, MatDatepickerModule
+
   ],
-  providers: [],
+  providers: [
+    UserInfoService, UsersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

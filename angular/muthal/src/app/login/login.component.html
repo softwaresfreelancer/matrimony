@@ -1,22 +1,39 @@
-<form action="action_page.php">
-    <div class="imgcontainer">
-    </div>
-  
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-  
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-  
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
+<div style="width: 100%;">
+  <div style="float:left; width: 60%">
+    <app-login-main></app-login-main>
+  </div>
+  <div style="float:left;width: 30%">
+    <mat-card>
+      <form class="form">
+        <label for="uname">
+          <b>Username </b>
+        </label>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]='userName' name="uname" required style=" width: 100%;">
+        </mat-form-field>
+        <br>
+        <label for="psw">
+          <b>Password </b>
+        </label>
+        <mat-form-field>
+          <input matInput type="password" [(ngModel)]='password' name="psw" required style=" width: 100%;">
+        </mat-form-field>
+
+        <br>
+        <button type="submit" (click)="onClickSubmit()">Login</button>
+        <br>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+
+
+        <div class="container" style="background-color:#f1f1f1">
+          <span class="psw">Forgot
+            <a href="#">password?</a>
+          </span>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
+<div style="clear:both"></div>

@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [MatCardModule]
 })
 export class AppComponent {
   title = 'Muthal Mudichu';
-  fullImagePath: string;
+  
 
   constructor() {
-    this.fullImagePath = '/assets/img_home.jpg'
+   
   }
+
+
 }
