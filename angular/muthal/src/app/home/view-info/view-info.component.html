@@ -1,0 +1,248 @@
+<body>
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <form class="modal-content">
+      <div class="container" *ngFor='let userInfo of userInfos'>
+        <h1>Information:                   {{userInfo.Name | uppercase}}</h1>
+        <div>
+          Resgistered Date:
+          <b>{{userInfo.RegistrationDate}}</b>
+        </div>
+        <p></p>
+        <hr>
+        <table>
+
+          <tr>
+            <td>
+              <tr>
+                <td>
+                  <label for="name">
+                    <b>Name</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Name | uppercase}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="dob">
+                    <b>Date of Birth</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.DateOfBirth}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="sex">
+                    <b>Sex</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Sex}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="height">
+                    <b>Height</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Height}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="complexion">
+                    <b>Complexion</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Complexion}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="star">
+                    <b>Star</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Star}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="pdm">
+                    <b>Pdm</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Pdm}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="dhosham">
+                    <b>Dhosham</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Dhosham}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="dhoshamType">
+                    <b>Dhosham Type</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.DhoshamType}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="birthtime">
+                    <b>Birth Time</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.BirthTime}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="birthplace">
+                    <b>Birth Place</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.BirthPlace}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="occupation">
+                    <b>Occupation</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Occupation}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="designation">
+                    <b>Designation</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Designation}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="salary">
+                    <b>Salary</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Salary}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="brothers">
+                    <b>Brothers</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Brothers}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="brothersMarried">
+                    <b>Brothers Married</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.BrothersMarried}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="sisters">
+                    <b>Sisters</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.Sisters}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="sistersMarried">
+                    <b>Sisters Married</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.SistersMarried}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="brideorgroom">
+                    <b>What sort of Bride/Groom Required</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.DescriptionOfReq}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="community">
+                    <b>Community Name</b>
+                  </label>
+                </td>
+                <td>
+                  {{userInfo.CommunityName}}
+                </td>
+              </tr>
+
+            </td>
+            <td>
+              <app-relative-info *ngFor="let relative of relatives" [relative]="relative"> </app-relative-info>
+            </td>
+          </tr>
+
+
+        </table>
+        <div>
+          <app-contact-info></app-contact-info>
+        </div>
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Back</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="updatebtn">Update</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the userInfo clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>

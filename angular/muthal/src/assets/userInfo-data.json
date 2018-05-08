@@ -1,0 +1,51 @@
+[
+    {
+        "Id": 123,
+        "RegistrationDate": "21-02-2018",
+        "Name": "nishanth",
+        "Sex": "male",
+        "DateOfBirth": "21-02-1995",
+        "Height": 5.7,
+        "Complexion": "fair",
+        "EducationOrQualification": "b.tech",
+        "Star": "Vishaka",
+        "Pdm": "2",
+        "Dhosham": true,
+        "DhoshamType": "ket",
+        "BirthPlace": "hyderabad",
+        "BirthTime": "01:00",
+        "Occupation": "it employee",
+        "Designation": "software engineer",
+        "CompanyName": "danske it",
+        "Salary": "30 thousand",
+        "PhoneNumber": "9494948246",
+        "Brothers": 0,
+        "BrothersMarried": false,
+        "Sisters": 1,
+        "SistersMarried": true,
+        "DescriptionOfReq": "good",
+        "CommunityName": "indian",
+        "Address": "bangalore",
+        "Father": {
+            "Relation": "father",
+            "Name": "murthy",
+            "Address": "hyderabad",
+            "Occupation": "business",
+            "PhoneNumber": "9440845100"
+        },
+        "Mother": {
+            "Relation": "mother",
+            "Name": "laxmi",
+            "Address": "hyderabad",
+            "Occupation": "job",
+            "PhoneNumber": "9641489912"
+        },
+        "Guardian": {
+            "Relation": "guardian",
+            "Name": "",
+            "Address": "",
+            "Occupation": "",
+            "PhoneNumber": ""
+        }
+    }
+]

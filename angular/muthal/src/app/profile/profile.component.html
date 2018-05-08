@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <label for="searchText" class="col-sm-2">
+      <h3>Search:</h3>
+    </label>
+
+    <input class="col-sm-7" type="text" [(ngModel)]="listFilter" placeholder="Enter text">
+  </div>
+
+  <div class="container">
+
+    <table class="table" *ngIf='users && users.length' col-sm-7>
+      <thead>
+        <th>
+          <h4>S.No</h4>
+        </th>
+        <th>
+          <h4>User Name</h4>
+        </th>
+        <th></th>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let user of filterdUsers; let i=index">
+          <td class="col-sm-2">{{i+1}}</td>
+          <td class="col-sm-6">{{user.UserName}}
+            <button class="btn btn-primary" (click)="rowOnDelete(i)">Renew</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>

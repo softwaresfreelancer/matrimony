@@ -6,8 +6,9 @@
 
   <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/action_page.php">
-      <div class="container">
+
+    <form class="modal-content" (ngSubmit)="onRegister(f)" #f="ngForm">
+      <div class="container form-group">
         <h1>Register</h1>
         <p>Please fill in this form to create profile.</p>
         <hr>
@@ -17,13 +18,13 @@
               <label for="name">
                 <b>Name</b>
               </label>
-              <input type="text" placeholder="Enter Name" name="name" required>
+              <input type="text" placeholder="Enter Name" id="name" name="name" required class="form-control" ngModel>
             </td>
             <td>
               <label for="dob">
                 <b>Date of Birth</b>
               </label>
-              <input type="date" name="dob">
+              <input type="date" name="dob" class="form-control" >
             </td>
           </tr>
           <tr>
@@ -31,7 +32,7 @@
               <label for="sex">
                 <b>Sex</b>
               </label>
-              <select name="sex">
+              <select name="sex" class="form-control" ngModel>
                 <option value=""></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -43,13 +44,13 @@
               <label for="height">
                 <b>Height</b>
               </label>
-              <input type="text" placeholder="Enter Height" name="height" required>
+              <input type="text" placeholder="Enter Height" name="height" required class="form-control" ngModel>
             </td>
             <td>
               <label for="complexion">
                 <b>Complexion</b>
               </label>
-              <input type="text" placeholder="Enter Complexion" name="complexion" required>
+              <input type="text" placeholder="Enter Complexion" name="complexion" required class="form-control" ngModel>
             </td>
           </tr>
           <tr>
@@ -57,20 +58,20 @@
               <label for="star">
                 <b>Star</b>
               </label>
-              <input type="text" placeholder="Enter Star" name="star" required>
+              <input type="text" placeholder="Enter Star" name="star" required class="form-control" ngModel>
             </td>
             <td>
               <label for="pdm">
                 <b>PDM</b>
               </label>
-              <input type="text" placeholder="Enter PDM" name="pdm" required>
+              <input type="text" placeholder="Enter PDM" name="pdm" required class="form-control" ngModel>
             </td>
             <tr>
               <td>
                 <label for="dhosham">
                   <b>Dhosham</b>
                 </label>
-                <select name="dhosham" placeholder="Yes/No">
+                <select name="dhosham" placeholder="Yes/No" class="form-control" ngModel>
                   <option value=""></option>
                   <option value="true">Yes</option>
                   <option value="false">No</option>
@@ -80,7 +81,7 @@
                 <label for="dhoshamType">
                   <b>Dhosham Type</b>
                 </label>
-                <select name="dhoshamType" placeholder="CHV/KET/RAG">
+                <select name="dhoshamType" placeholder="CHV/KET/RAG" class="form-control" ngModel>
                   <option value=""></option>
                   <option value="CHV">CHV</option>
                   <option value="KET">KET</option>
@@ -93,47 +94,60 @@
                 <label for="birthplace">
                   <b>Birth Place</b>
                 </label>
-                <input type="text" placeholder="Enter Place of Birth" name="birthplace" required>
+                <input type="text" placeholder="Enter Place of Birth" name="birthplace" required class="form-control" ngModel>
               </td>
               <td>
                 <label for="birthtime">
                   <b>Birth Time</b>
                 </label>
-                <input type="time" name="birthtime" required>
+                <input type="time" name="birthtime" required class="form-control" ngModel>
               </td>
             </tr>
             <tr>
               <td>
+                <label for="EducationOrQualification">
+                  <b>EducationOrQualification</b>
+                </label>
+                <input type="text" placeholder="Enter EducationOrQualification" name="educationOrQualification" required class="form-control"
+                  ngModel>
+              </td>
+              <td>
                 <label for="occupation">
                   <b>Occupation</b>
                 </label>
-                <input type="text" placeholder="Enter Occupation" name="occupation" required>
+                <input type="text" placeholder="Enter Occupation" name="occupation" required class="form-control" ngModel>
               </td>
               <td>
                 <label for="designation">
                   <b>Designation</b>
                 </label>
-                <input type="text" placeholder="Enter Designation" name="designation" required>
+                <input type="text" placeholder="Enter Designation" name="designation" required class="form-control" ngModel>
               </td>
               <td>
                 <label for="salary">
                   <b>Salary</b>
                 </label>
-                <input type="text" placeholder="Enter Salary per Month" name="salary" required>
+                <input type="text" placeholder="Enter Salary per Month" name="salary" required class="form-control" ngModel>
               </td>
+              <td>
+                  <label for="company">
+                    <b>Company Name</b>
+                  </label>
+                  <input type="text" placeholder="Enter Company Name" name="companyname" required class="form-control" ngModel>
+                </td>
             </tr>
             <tr>
               <td>
                 <label for="brothers">
                   <b>Brothers</b>
                 </label>
-                <input type="text" placeholder="Enter Number of Brothers" name="brothers" required>
+                <input type="text" placeholder="Enter Number of Brothers" name="brothers" required class="form-control" ngModel>
               </td>
               <td>
                 <label for="brothersMarried">
                   <b>Brothers Married</b>
                 </label>
-                <input type="text" placeholder="Enter Yes/No" name="brothersMarried" required>
+                <input type="text" placeholder="Enter Yes/No" name="brothersmarried" required class="form-control" ngModel>
               </td>
             </tr>
             <tr>
@@ -141,13 +155,13 @@
                 <label for="sisters">
                   <b>Sisters</b>
                 </label>
-                <input type="text" placeholder="Enter Number of Sisters" name="sisters" required>
+                <input type="text" placeholder="Enter Number of Sisters" name="sisters" required class="form-control" ngModel>
               </td>
               <td>
                 <label for="sistersMarried">
                   <b>Sisters Married</b>
                 </label>
-                <input type="text" placeholder="Enter Yes/No" name="sistersMarried" required>
+                <input type="text" placeholder="Enter Yes/No" name="sistersmarried" required class="form-control" ngModel>
               </td>
             </tr>
             <tr>
@@ -155,19 +169,19 @@
                 <label for="father">
                   <b>Father</b>
                 </label>
-                <input type="text" placeholder="Enter Father's Name" name="fathername" required>
+                <input type="text" placeholder="Enter Father's Name" name="fathername" required class="form-control" ngModel>
               </td>
               <td>
                 <label for="mother">
                   <b>Mother</b>
                 </label>
-                <input type="text" placeholder="Enter Mother's Name" name="mothername" required>
+                <input type="text" placeholder="Enter Mother's Name" name="mothername" required class="form-control" ngModel>
               </td>
               <td>
                 <label for="guardain">
                   <b>Guardain</b>
                 </label>
-                <input type="text" placeholder="Enter Guardian's Name" name="guardainname" required>
+                <input type="text" placeholder="Enter Guardian's Name" name="guardainname" required class="form-control" ngModel>
               </td>
             </tr>
             <tr>
@@ -177,7 +191,8 @@
                 </label>
               </td>
               <td>
-                <input type="text" placeholder="Enter Description" style="width: 100%" name="brideorgroom" required>
+                <input type="text" placeholder="Enter Description" style="width: 100%" name="descriptionOfReq" required class="form-control"
+                  ngModel>
               </td>
             </tr>
             <tr>
@@ -185,13 +200,13 @@
                 <label for="community">
                   <b>Community Name</b>
                 </label>
-                <input type="text" placeholder="Enter community" name="community" required>
+                <input type="text" placeholder="Enter community" name="communityname" required class="form-control" ngModel>
               </td>
             </tr>
             <tr>
               <td>
                 <label>
-                  <input type="checkbox" name="check" style="margin-bottom:15px"> Verified
+                  <input type="checkbox" name="check" style="margin-bottom:15px" class="form-control" ngModel> Verified
                 </label>
                 <p>All Details are verified
                   <a href="#" style="color:dodgerblue"></a>.</p>

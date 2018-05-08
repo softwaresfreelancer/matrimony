@@ -1,80 +1,83 @@
-<header>
-  <app-app-header title="Home" [isUserLoggedIn]="true"></app-app-header>
+<div>
+
+  <header>
+    <app-app-header title="Home" [isUserLoggedIn]="true"></app-app-header>
+
+    <div class="row" class="container">
+      <div class="col-sm-4">
+        <a [routerLink]="['/home']" routerLinkActive="active-link">
+          <img [src]="fullImagePath" style="width:400px;height:150px;" align="left">
+        </a>
+      </div>
+      <div class="col-sm-8">
+        <h1 align="center">Welcome to {{ title }}</h1>
+      </div>
+    </div>
+  </header>
+
 
   <div class="row" class="container">
-    <div class="col-sm-4">
-      <a [routerLink]="['/home']" routerLinkActive="active-link">
-        <img [src]="fullImagePath" style="width:400px;height:150px;" align="left">
-      </a>
+    <div class="col-lg-2">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active-link">Home</a>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active-link">Login</a>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <a class="nav-link" [routerLink]="['/registration']" routerLinkActive="active-link">Registration</a>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <a class="nav-link" [routerLink]="['/profile']" routerLinkActive="active-link">Profile Renewal</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="col-sm-8">
-      <h1 align="center">Welcome to {{ title }}</h1>
+
+    <div class="col-lg-10">
+      <div class="container" class="col-xs-12">
+        <div class="row">
+          <label for="searchText" class="col-sm-2">
+            <h3>Search:</h3>
+          </label>
+          <input class="col-sm-7" type="text" [(ngModel)]="listFilter" placeholder="Enter text">
+        </div>
+        <div class="container">
+          <table class="table" *ngIf='users && users.length' col-sm-7>
+            <thead>
+              <th>
+                <h4>S.No</h4>
+              </th>
+              <th>
+                <h4>User Name</h4>
+              </th>
+              <th></th>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let user of filterdUsers; let i=index">
+                <td class="col-sm-2">{{i+1}}</td>
+                <td class="col-sm-6">
+                  <b>{{user.UserName}}</b>
+                </td>
+                <td>
+                  <button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'">View</button>
+                </td>
+                <app-view-info [user]="user"></app-view-info>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-</header>
-
-
-<div class="row" class="container">
-  <div class="col-lg-2">
-    <div class="panel-group">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active-link">Home</a>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active-link">Login</a>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <a class="nav-link" [routerLink]="['/registration']" routerLinkActive="active-link">Registration</a>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <a class="nav-link" [routerLink]="['/profile']" routerLinkActive="active-link">Profile Renewal</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-10">
-
-
-
-
-    <div class="container" class="col-xs-12">
-      <div class="row">
-        <label for="searchText" class="col-sm-2">
-          <h3>Search:</h3>
-        </label>
-        <input class="col-sm-7" type="text" [(ngModel)]="listFilter" placeholder="Enter text">
-      </div>
-      <div class="container">
-        <table class="table" *ngIf='users && users.length' col-sm-7>
-          <thead>
-            <th>
-              <h4>S.No</h4>
-            </th>
-            <th>
-              <h4>User Name</h4>
-            </th>
-            <th></th>
-          </thead>
-
-          <tbody>
-            <tr *ngFor="let user of filterdUsers; let i=index">
-              <td class="col-sm-2">{{i+1}}</td>
-              <td class="col-sm-6">
-                <b>{{user.UserName}}</b>
-              </td>
-              <td>
-                <button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'">View</button>
-              </td>
-              <app-view-info [user]="user"></app-view-info>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+</div>
